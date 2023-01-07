@@ -1,16 +1,16 @@
 package com.AWportfolio.SBportfolio.service;
 
-import com.AWportfolio.SBportfolio.model.Estudios;
+import com.AWportfolio.SBportfolio.model.Estudio;
 import java.util.List;
 
 public interface IEstudiosService {
     
-    public List <Estudios> verEstudios();
+    public List <Estudio> verEstudios();
     
-    public void agregarEstudio (Estudios edu);
+    public Estudio agregarEstudio (Estudio edu);
     
-    public void eliminarEstudio (Long id);
+    public void borrarEstudio (Long id);
     
-    public void modificarEstudio (Estudios edu);
+    public void modificarEstudio (Estudio edu);
             
 }

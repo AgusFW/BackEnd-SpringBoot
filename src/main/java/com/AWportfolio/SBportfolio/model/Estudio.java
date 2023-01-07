@@ -8,19 +8,19 @@ import lombok.Setter;
 
 @Getter @Setter 
 @Entity
-public class Estudios {
+public class Estudio {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO) 
     private long id;   
     private String titulo;
     private String subtitulo;
     private String descripcion;
 
-    public Estudios() {
+    public Estudio() {
     }
 
-    public Estudios(long id, String titulo, String subtitulo, String descripcion) {
+    public Estudio(long id, String titulo, String subtitulo, String descripcion) {
         this.id = id;
         this.titulo = titulo;
         this.subtitulo = subtitulo;

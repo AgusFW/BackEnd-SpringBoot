@@ -1,6 +1,8 @@
 package com.AWportfolio.SBportfolio.Controller;
 
+import com.AWportfolio.SBportfolio.model.Estudio;
 import com.AWportfolio.SBportfolio.model.Persona;
+import com.AWportfolio.SBportfolio.service.IEstudiosService;
 import com.AWportfolio.SBportfolio.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ public class Controller {
 
     @Autowired
     private IPersonaService persoServ;
+    
+    @Autowired
+    private IEstudiosService estudiosServ;
     
     @PostMapping ("/new/persona")
     public void agregarPersona(@RequestBody Persona pers){
@@ -39,5 +44,26 @@ public class Controller {
     @PutMapping ("/change/persona")
     public void modificarPersona(@RequestBody Persona pers){
        persoServ.modificarPersona(pers);
+    }
+    
+    @PostMapping("/new/estudio/{id}")
+    public void agregarEstudio(@RequestBody Estudio edu,@PathVariable Persona id){
+        persoServ.sumarEstudio(edu, id);
+    }
+    
+    @GetMapping("/ver/estudios")
+    @ResponseBody
+    public List <Estudio> verEstudios(){
+        return estudiosServ.verEstudios();
+    }
+    
+    @DeleteMapping("/delete/estudio/{id}")
+    public void borrarEstudio(@PathVariable Long id){
+        estudiosServ.borrarEstudio(id);
+    }
+    
+    @PutMapping("/change/estudio")
+    public void modificarEstudio(@RequestBody Estudio edu){
+        estudiosServ.modificarEstudio(edu);
     }
 }

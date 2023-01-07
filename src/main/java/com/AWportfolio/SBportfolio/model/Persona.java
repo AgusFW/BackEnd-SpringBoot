@@ -1,12 +1,11 @@
 package com.AWportfolio.SBportfolio.model;
 
+import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,15 +18,14 @@ import lombok.Setter;
 public class Persona {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO) 
     private Long Id;
     private String nombre;
     private String sobre_mi;
     private String motivo;
     
-    @OneToMany (targetEntity = Estudios.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "per_fk", referencedColumnName = "id")
-    private List <Estudios> listaEstudios;
+    @OneToMany
+    private List <Estudio> listaEstudios;
     
     public Persona (){
     }
@@ -37,7 +35,11 @@ public class Persona {
         this.nombre = nombre;
         this.sobre_mi = sobre_mi;
         this.motivo = motivo;
+        this.listaEstudios = new ArrayList<>();
     }
-    
+
+    public void addEducacion(Estudio edu){
+        this.listaEstudios.add(edu);
+    }
     
 }

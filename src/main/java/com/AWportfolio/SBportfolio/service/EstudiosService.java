@@ -1,6 +1,6 @@
 package com.AWportfolio.SBportfolio.service;
 
-import com.AWportfolio.SBportfolio.model.Estudios;
+import com.AWportfolio.SBportfolio.model.Estudio;
 import com.AWportfolio.SBportfolio.repository.EstudiosRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,22 +13,22 @@ public class EstudiosService implements IEstudiosService{
     public EstudiosRepository estuRepo;
     
     @Override
-    public List<Estudios> verEstudios() {
+    public List<Estudio> verEstudios() {
         return estuRepo.findAll(); 
     }
 
     @Override
-    public void agregarEstudio(Estudios edu) {
-        estuRepo.save(edu); 
+    public Estudio agregarEstudio(Estudio edu) {
+    return estuRepo.save(edu); 
     }
 
     @Override
-    public void eliminarEstudio(Long id) {
+    public void borrarEstudio(Long id) {
         estuRepo.deleteById(id); 
     }
 
     @Override
-    public void modificarEstudio(Estudios edu) {
+    public void modificarEstudio(Estudio edu) {
         estuRepo.save(edu);
     }
     
