@@ -1,8 +1,10 @@
 package com.AWportfolio.SBportfolio.Controller;
 
 import com.AWportfolio.SBportfolio.model.Estudio;
+import com.AWportfolio.SBportfolio.model.Experiencia;
 import com.AWportfolio.SBportfolio.model.Persona;
 import com.AWportfolio.SBportfolio.service.IEstudiosService;
+import com.AWportfolio.SBportfolio.service.IExperienciaService;
 import com.AWportfolio.SBportfolio.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class Controller {
     
     @Autowired
     private IEstudiosService estudiosServ;
+    
+    @Autowired
+    private IExperienciaService experienciaServ;
     
     @PostMapping ("/new/persona")
     public void agregarPersona(@RequestBody Persona pers){
@@ -66,4 +71,21 @@ public class Controller {
     public void modificarEstudio(@RequestBody Estudio edu){
         estudiosServ.modificarEstudio(edu);
     }
+
+    @GetMapping("/ver/experiencia")
+    @ResponseBody
+    public List <Experiencia> verExperiencia(){
+        return experienciaServ.verExperiencia();
+    }
+    
+    @DeleteMapping("/delete/experiencia/{id}")
+    public void borrarExperiencia(@PathVariable Long id){
+        experienciaServ.borrarExperiencia(id);
+    }
+    
+    @PutMapping("/change/xperiencia")
+    public void modificarExperiencia(@RequestBody Experiencia expe){
+        experienciaServ.modificarExperiencia(expe);
+    }
+
 }
