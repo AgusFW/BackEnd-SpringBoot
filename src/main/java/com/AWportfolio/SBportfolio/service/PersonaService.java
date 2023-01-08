@@ -1,5 +1,6 @@
 package com.AWportfolio.SBportfolio.service;
 import com.AWportfolio.SBportfolio.model.Estudio;
+import com.AWportfolio.SBportfolio.model.Experiencia;
 import com.AWportfolio.SBportfolio.model.Persona;
 import com.AWportfolio.SBportfolio.repository.PersonaRepository;
 import java.util.List;
@@ -14,6 +15,9 @@ public class PersonaService implements IPersonaService{
 
     @Autowired
      public EstudiosService estudiosServ; 
+    
+    @Autowired
+    public ExperienciaService experienciaServ;
     
     @Override
     public List<Persona> verPersonas() {
@@ -44,6 +48,12 @@ public class PersonaService implements IPersonaService{
     public void sumarEstudio(Estudio edu, Persona per) {
         Estudio edu_id = estudiosServ.agregarEstudio(edu);
         per.addEstudio(edu_id);
+        persoRepo.save(per);
+    }
+    @Override
+    public void sumarExperiencia(Experiencia expe, Persona per) {
+        Experiencia expe_id = experienciaServ.agregarExperiencia(expe);
+        per.addExperiencia(expe_id);
         persoRepo.save(per);
     }
     

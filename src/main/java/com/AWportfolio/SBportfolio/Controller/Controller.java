@@ -22,13 +22,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
 
     @Autowired
-    private IPersonaService persoServ;
+    public IPersonaService persoServ;
     
     @Autowired
-    private IEstudiosService estudiosServ;
+    public IEstudiosService estudiosServ;
     
     @Autowired
-    private IExperienciaService experienciaServ;
+    public IExperienciaService experienciaServ;
     
     @PostMapping ("/new/persona")
     public void agregarPersona(@RequestBody Persona pers){
@@ -41,7 +41,7 @@ public class Controller {
         return persoServ.verPersonas();
     }
     
-    @DeleteMapping ("/delete/{id}")
+    @DeleteMapping ("/delete/Persona/{id}")
     public void borrarPersona (@PathVariable Long id){
         persoServ.borrarPersona(id);
     }
@@ -72,6 +72,11 @@ public class Controller {
         estudiosServ.modificarEstudio(edu);
     }
 
+    @PostMapping("/new/experiencia/{id}")
+    public void agregarExperiencia(@RequestBody Experiencia expe,@PathVariable Persona id){
+        persoServ.sumarExperiencia(expe, id);
+    } 
+    
     @GetMapping("/ver/experiencia")
     @ResponseBody
     public List <Experiencia> verExperiencia(){
@@ -83,7 +88,7 @@ public class Controller {
         experienciaServ.borrarExperiencia(id);
     }
     
-    @PutMapping("/change/xperiencia")
+    @PutMapping("/change/experiencia")
     public void modificarExperiencia(@RequestBody Experiencia expe){
         experienciaServ.modificarExperiencia(expe);
     }
