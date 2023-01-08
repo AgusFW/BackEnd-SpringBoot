@@ -49,7 +49,7 @@ public class Controller {
     @PostMapping("/new/estudio/{id}")
     public void agregarEstudio(@RequestBody Estudio edu,@PathVariable Persona id){
         persoServ.sumarEstudio(edu, id);
-    }
+    } 
     
     @GetMapping("/ver/estudios")
     @ResponseBody

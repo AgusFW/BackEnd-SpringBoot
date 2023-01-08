@@ -25,7 +25,7 @@ public class Persona {
     private String motivo;
     
     @OneToMany
-    private List <Estudio> listaEstudios;
+    List <Estudio> listaEstudios;
     
     public Persona (){
     }
@@ -38,7 +38,7 @@ public class Persona {
         this.listaEstudios = new ArrayList<>();
     }
 
-    public void addEducacion(Estudio edu){
+    public void addEstudio(Estudio edu){
         this.listaEstudios.add(edu);
     }
     

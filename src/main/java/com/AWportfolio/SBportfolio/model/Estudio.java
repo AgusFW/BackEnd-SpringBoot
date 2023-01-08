@@ -12,7 +12,7 @@ public class Estudio {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) 
-    private long id;   
+    long id;   
     private String titulo;
     private String subtitulo;
     private String descripcion;

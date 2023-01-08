@@ -43,7 +43,7 @@ public class PersonaService implements IPersonaService{
     @Override
     public void sumarEstudio(Estudio edu, Persona per) {
         Estudio edu_id = estudiosServ.agregarEstudio(edu);
-        per.addEducacion(edu_id);
+        per.addEstudio(edu_id);
         persoRepo.save(per);
     }
     
