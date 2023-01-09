@@ -37,8 +37,14 @@ public class Controller {
     
     @GetMapping ("/ver/personas")
     @ResponseBody
-    public List<Persona> verPersona (){
+    public List<Persona> verPersonas (){
         return persoServ.verPersonas();
+    }
+    
+    @GetMapping ("/ver/persona/{id}")
+       @ResponseBody
+       public Persona verPersona(@PathVariable long id){
+       return persoServ.verPersona(id);    
     }
     
     @DeleteMapping ("/delete/Persona/{id}")
