@@ -21,4 +21,5 @@ public interface IPersonaService {
     
     public void sumarExperiencia(Experiencia expe, Persona id);
     
+    public Boolean login(String email, String password);
 }

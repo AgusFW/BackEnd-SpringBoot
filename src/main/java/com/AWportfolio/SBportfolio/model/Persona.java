@@ -12,8 +12,7 @@ import lombok.Setter;
 
 
 
-@Getter 
-@Setter
+@Getter @Setter
 @Entity
 public class Persona {
     
@@ -24,6 +23,8 @@ public class Persona {
     private String sobre_mi;
     private String motivo;
     private String img_persona;
+    private String password;
+    private String email;
     
     @OneToMany
     List <Estudio> listaEstudios;
@@ -34,7 +35,7 @@ public class Persona {
     public Persona (){
     }
 
-    public Persona(Long Id, String nombre, String sobre_mi, String motivo, String img_persona) {
+    public Persona(Long Id, String nombre, String sobre_mi, String motivo, String img_persona, String password, String email) {
         this.Id = Id;
         this.nombre = nombre;
         this.sobre_mi = sobre_mi;
@@ -42,6 +43,8 @@ public class Persona {
         this.img_persona = img_persona;
         this.listaEstudios = new ArrayList<>();
         this.listaExperiencia = new ArrayList<>();
+        this.password = password;
+        this.email = email;
     }
 
     public void addEstudio(Estudio edu){
