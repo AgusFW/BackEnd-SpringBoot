@@ -34,7 +34,7 @@ public class Controller {
     public IExperienciaService experienciaServ;
     
     @PostMapping("/login")
-    public Boolean login(@RequestBody String password, String email) {
+    public Boolean login(@PathVariable String password,@PathVariable String email) {
         return persoServ.login(email, password);
     }
     
