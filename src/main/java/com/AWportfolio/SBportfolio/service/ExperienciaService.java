@@ -18,6 +18,11 @@ public class ExperienciaService implements IExperienciaService{
     }
     
     @Override
+    public Experiencia buscarExperiencia(Long id){
+    return expeRepo.findById(id).orElse(null);
+    }
+    
+    @Override
     public Experiencia agregarExperiencia(Experiencia expe){
         return expeRepo.save(expe);
     }

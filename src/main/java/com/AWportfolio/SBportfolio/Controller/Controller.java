@@ -97,6 +97,12 @@ public class Controller {
         return experienciaServ.verExperiencia();
     }
     
+    @GetMapping ("/buscar /experiencia/{id}")
+    @ResponseBody
+       public Experiencia buscarExperiencia(@PathVariable Long id){
+       return experienciaServ.buscarExperiencia(id);    
+    }
+    
     @DeleteMapping("/delete/experiencia/{id}")
     public void borrarExperiencia(@PathVariable Long id){
         experienciaServ.borrarExperiencia(id);
