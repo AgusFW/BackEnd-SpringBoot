@@ -33,7 +33,7 @@ public class Controller {
     @Autowired
     public IExperienciaService experienciaServ;
     
-    @PostMapping("/login/{password}/{email}")
+    @PostMapping("/login/{password}/{emailpost}")
     public Boolean login(@PathVariable String password,@PathVariable String email) {
         return persoServ.login(email, password);
     }
@@ -74,6 +74,12 @@ public class Controller {
     @ResponseBody
     public List <Estudio> verEstudios(){
         return estudiosServ.verEstudios();
+    }
+    
+    @GetMapping ("/buscar /estudio/{id}")
+    @ResponseBody
+       public Estudio buscarEstudio(@PathVariable Long id){
+       return estudiosServ.buscarEstudio(id);    
     }
     
     @DeleteMapping("/delete/estudio/{id}")

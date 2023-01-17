@@ -12,5 +12,7 @@ public interface IEstudiosService {
     public void borrarEstudio (Long id);
     
     public void modificarEstudio (Estudio edu);
+    
+    public Estudio buscarEstudio(Long id);
             
 }

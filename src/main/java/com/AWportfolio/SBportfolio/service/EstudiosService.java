@@ -21,6 +21,11 @@ public class EstudiosService implements IEstudiosService{
     public Estudio agregarEstudio(Estudio edu) {
     return estuRepo.save(edu); 
     }
+    
+    @Override
+    public Estudio buscarEstudio(Long id){
+    return estuRepo.findById(id).orElse(null);
+    }
 
     @Override
     public void borrarEstudio(Long id) {
