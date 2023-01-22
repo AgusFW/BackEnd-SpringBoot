@@ -35,6 +35,8 @@ public class Controller {
         return persoServ.login(email, password);
     }
     
+    /* Persona */
+    
     @PostMapping ("/new/persona")
     public void agregarPersona(@RequestBody Persona pers){
        persoServ.crearPersona(pers);
@@ -59,8 +61,10 @@ public class Controller {
     
     @PutMapping ("/change/persona")
     public void modificarPersona(@RequestBody Persona pers){
-       persoServ.modificarPersona(pers);
+       persoServ.modificarPersona(pers);       
     }
+    
+    /* Estudios */
     
     @PostMapping("/new/estudio/{id}")
     public void agregarEstudio(@RequestBody Estudio edu,@PathVariable Persona id){
@@ -89,6 +93,8 @@ public class Controller {
         estudiosServ.modificarEstudio(edu);
     }
 
+    /* Experiencias */
+    
     @PostMapping("/new/experiencia/{id}")
     public void agregarExperiencia(@RequestBody Experiencia expe,@PathVariable Persona id){
         persoServ.sumarExperiencia(expe, id);
