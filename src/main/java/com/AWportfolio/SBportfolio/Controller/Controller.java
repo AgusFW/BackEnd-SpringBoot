@@ -33,7 +33,7 @@ public class Controller {
     @Autowired
     public IExperienciaService experienciaServ;
     
-    @PostMapping("/login/{password}/{emailpost}")
+    @PostMapping("/login/{password}/{email}")
     public Boolean login(@PathVariable String password,@PathVariable String email) {
         return persoServ.login(email, password);
     }
