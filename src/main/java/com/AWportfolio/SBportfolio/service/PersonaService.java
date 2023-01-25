@@ -21,7 +21,7 @@ public class PersonaService implements IPersonaService{
     
    @Override
    public Boolean login(String password, String email){
-       return persoRepo.existsByEmailAndPassword(password, email);
+       return persoRepo.existsByPasswordAndEmail(password, email);
    }
     
     @Override

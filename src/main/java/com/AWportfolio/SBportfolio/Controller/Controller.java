@@ -32,7 +32,7 @@ public class Controller {
     
     @PostMapping("/login/{password}/{email}")
     public Boolean login(@PathVariable String password,@PathVariable String email) {
-        return persoServ.login(email, password);
+        return persoServ.login(password, email);
     }
     
     /* Persona */
