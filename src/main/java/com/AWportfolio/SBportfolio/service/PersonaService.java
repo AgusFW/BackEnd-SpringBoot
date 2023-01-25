@@ -20,8 +20,8 @@ public class PersonaService implements IPersonaService{
     public ExperienciaService experienciaServ;
     
    @Override
-   public Boolean login(String email, String password){
-       return persoRepo.existsByEmailAndPassword(email, password);
+   public Boolean login(String password, String email){
+       return persoRepo.existsByEmailAndPassword(password, email);
    }
     
     @Override
