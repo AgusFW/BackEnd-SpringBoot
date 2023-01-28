@@ -1,5 +1,6 @@
 package com.AWportfolio.SBportfolio.Controller;
 
+import com.AWportfolio.SBportfolio.model.Credenciales;
 import com.AWportfolio.SBportfolio.model.Estudio;
 import com.AWportfolio.SBportfolio.model.Experiencia;
 import com.AWportfolio.SBportfolio.model.Persona;
@@ -8,7 +9,9 @@ import com.AWportfolio.SBportfolio.service.IExperienciaService;
 import com.AWportfolio.SBportfolio.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,9 +33,17 @@ public class Controller {
     @Autowired
     public IExperienciaService experienciaServ;
     
-    @GetMapping("/login/{password}/{email}")
-    public Boolean login(@PathVariable String password,@PathVariable String email) {
-        return persoServ.login(password, email);
+    @PostMapping("/login")
+    public Boolean login(@RequestBody Credenciales cred) {
+        System.out.println("hola");
+        return persoServ.login( cred.getPassword(), cred.getEmail());
+        
+    }
+        
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Void> handleException(Exception e) {
+    	e.printStackTrace();
+        return null;
     }
     
     /* Persona */
