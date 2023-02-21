@@ -35,9 +35,8 @@ public class Controller {
     
     @PostMapping("/login")
     public Boolean login(@RequestBody Credenciales cred) {
-        System.out.println("hola");
-        return persoServ.login( cred.getPassword(), cred.getEmail());
-        
+        System.out.println("ok");
+        return persoServ.login( cred.getPassword(), cred.getEmail());        
     }
         
     @ExceptionHandler(Exception.class)

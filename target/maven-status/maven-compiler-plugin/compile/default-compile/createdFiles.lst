@@ -1,0 +1,16 @@
+com\AWportfolio\SBportfolio\service\IPersonaService.class
+com\AWportfolio\SBportfolio\model\Experiencia.class
+com\AWportfolio\SBportfolio\model\Credenciales.class
+com\AWportfolio\SBportfolio\service\PersonaService.class
+com\AWportfolio\SBportfolio\SBportfolioApplication$1.class
+com\AWportfolio\SBportfolio\service\IExperienciaService.class
+com\AWportfolio\SBportfolio\SBportfolioApplication.class
+com\AWportfolio\SBportfolio\service\EstudiosService.class
+com\AWportfolio\SBportfolio\service\ExperienciaService.class
+com\AWportfolio\SBportfolio\service\IEstudiosService.class
+com\AWportfolio\SBportfolio\repository\ExperienciaRepository.class
+com\AWportfolio\SBportfolio\repository\PersonaRepository.class
+com\AWportfolio\SBportfolio\Controller\Controller.class
+com\AWportfolio\SBportfolio\model\Estudio.class
+com\AWportfolio\SBportfolio\repository\EstudiosRepository.class
+com\AWportfolio\SBportfolio\model\Persona.class
