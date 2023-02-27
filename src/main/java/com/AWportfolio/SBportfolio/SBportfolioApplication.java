@@ -18,7 +18,7 @@ public class SBportfolioApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("https://mi-portfolio-personal.web.app/portfolio").allowedMethods("*").allowedHeaders("*");
+                registry.addMapping("/**").allowedOrigins("https://mi-portfolio-personal.web.app").allowedMethods("*").allowedHeaders("*");
             }
         };
     }
